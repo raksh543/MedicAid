@@ -237,6 +237,11 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.MyView
                 @Override
                 public void onClick(View view) {
                     //todo open prescriptioDetails
+                     final Intent intent;
+                    intent =  new Intent(context, PrescriptionDetails.class);
+                    context.startActivity(intent);
+
+                    Log.i("heyy", "onClick: ");
                 }
             });
         }
