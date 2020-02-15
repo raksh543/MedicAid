@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -159,6 +158,11 @@
       </div>  
   </div>
 <!--Appointments-->
+
+
+
+
+
 <div id="appointments" style="width:75%;float:right;display: none;">
 
   <div class="container" style="width:50%;height:35px;margin-top:30px;margin-bottom:30px;padding-left:30px;padding-right:20px;background-color: #FFFFFF;position: relative;
@@ -179,6 +183,10 @@
     
     </div>
     </div>
+
+
+
+
 
     <!--recycler item-->
     <div class="parent_division" style="background-color: #FFFFFF;height: 120px;
@@ -203,9 +211,16 @@
                <p style="position: absolute; right: 33px; top: 50px;font-family:'Raleway';font-size: 13px; "> Time: <b>05:15 am</b> </p>
             </div>
 </div>
+
+
+
 <!--New Appointment-->
+
+
+
+
   <div id="newAppointment" style="width:75%;float:right;display: none;">
-    <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)">
+    <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)" id="appoint">
       <table class="container space-between" 
         style="border:none;border-width:0px;width:90%;height:80%;font-size:18px;margin-top: 30px;"
       >
@@ -275,9 +290,9 @@
             <p style="margin-left:20px;">Doctor ID</p>
             <input
               type="text"
-              id="doctorid"
+              id="docName"
               class="form-control"
-              name="doctorid"
+              name="docName"
               ngModel
               required
               name
@@ -291,7 +306,7 @@
             <br />
             Amount Paid<input
               type="number"
-              id="amountpaid"
+              id="amtPaid"
               class="form-control"
               name="amountpaid"
               ngModel
@@ -365,13 +380,19 @@
     </form>
   </div>
 
+
+
+
+
+
+
+
   <!--Settings division-->
   <div  id= "settings" style="width:75%;float:right;display: none;" class="container space-between">
    
       <div class="col-xs-3" style="position: absolute;margin-top:20px;
-      left: 35%; float: left;
-      ">
-      <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)">
+      left: 35%; float: left;">
+      <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)" id="settings">
         <div class="form-group">
           <label for="name" >Name</label>
           <input
@@ -478,7 +499,7 @@
       </form>
     
     
-    </div>
+    
     <div style="margin-left: 60%;margin-top:50%;float:right;">
       <label for="doctorname" >Add Doctor</label>
       <input
@@ -492,442 +513,42 @@
       />
       </div>
   </div>
+</div>
 
 
 
     </div>
 
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBlyx_6Hb2dY_KMc5WbArjgDQcUtgPUiEs",
+    authDomain: "vedanta-6c527.firebaseapp.com",
+    databaseURL: "https://vedanta-6c527.firebaseio.com",
+    projectId: "vedanta-6c527",
+    storageBucket: "vedanta-6c527.appspot.com",
+    messagingSenderId: "328727345990",
+    appId: "1:328727345990:web:8d3f243bc656bda03b4347",
+    measurementId: "G-KSEY976X91"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth()
+  const details = firebase.database()
+  const firestore = firebase.firestore()
+
+</script>
     </body>
-=======
-<html>
-<head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <title>Vedanta</title>
-  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
-  <script>
-    function onAppointments(){
-      var x=document.getElementById("appointments")
-      var y=document.getElementById("newAppointment")
-      var z=document.getElementById("settings")
-      x.style.display="block"
-      y.style.display="none"
-      z.style.display="none"
-    }
-
-    function onsettings(){
-      var x=document.getElementById("appointments")
-      var y=document.getElementById("newAppointment")
-      var z=document.getElementById("settings")
-      x.style.display="none"
-      y.style.display="none"
-      z.style.display="block"
-    }
-
-    function onnewAppointments(){
-      var x=document.getElementById("appointments")
-      var y=document.getElementById("newAppointment")
-      var z=document.getElementById("settings")
-      x.style.display="none"
-      y.style.display="block"
-      z.style.display="none"
-    }
-
-  </script>
-  <style>     
-      .parent_division{
-          position: relative;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-
-    * {box-sizing: border-box;}
-
-    /* Style the navbar */
-    .topnav {
-        height: 55px;
-        margin-left: -10px;
-        margin-top: -10px;
-        padding-top: 15px;
-      overflow: hidden;
-      background-color: #3688E3;
-    }
-
-    .container.space-around {
-  justify-content: space-around;
-  }
-
-    .topnav .login-container {
-      float: right;
-    }
-
-    /* Style the input field inside the navbar */
-
-    /* Style the button inside the input container */
-    .topnav .login-container button {
-      float: right;
-      background-color: #FFFFFF;
-      border-radius: 4px;
-      font-size: 17px;
-      padding: 5px;
-      border: none;
-      cursor: pointer;
-    }
-   
-    td
-{
-    padding:0 20px;
-}
-
-    </style>
-    </head>
-    <body style="background-color: #BED3EB">
-    	
-    <div class="topnav"style="position: relative">
-  
-    <p style="position: relative;  font-family:'Raleway';font-size: 20px; color: #FFFFFF; right: 100px;top:0px;">
-        <ul style="display: flex; float: right;margin-top: -2px;">
-
-            <li style="list-style-type: none;position: relative;  font-family:'Raleway';font-size: 20px; color: #FFFFFF; margin-right: 20px;">
-     <b>Current Admin - Parth Sharma</b></p></li>
-
-     <li style="list-style-type: none;">
-   
-    <button type="submit" style="margin-top: -40px;margin-right: 30px;color: #3688E3; height: 35px;width: 100px;">LOGOUT</button>
-</li>
-   
-</div>
-        <div class="left_division" style="background-color: #FFFFFF; 
-        height:  100%; width: 25% ; margin-left: 0px;margin-left: -10px; position: absolute;background-image: url(background.png);background-repeat: no-repeat;" >
-
-
-          <img src="app_logo.png" alt="logo" style="width:220px;height: 200px;position: absolute; left: 20px; top: 50px;">
-         
-
-
-    <p onclick="onAppointments()" style="position: absolute; float: center;  font-family:'Raleway';font-size: 20px; color: #3688E3; margin-top: 250px;margin-left: 30px;"> Appointments</p>
-
-
-    <p onclick="onnewAppointments()" style="position: absolute; float: center;  font-family:'Raleway';font-size: 16px; color: #3688E3; margin-top: 300px;margin-left: 30px;"> New Appointment</p>
-
-    <p onclick="onsettings()" style="position: absolute; float: center;  font-family:'Raleway';font-size: 16px; color: #3688E3; margin-top: 350px;margin-left: 30px;"> Settings</p>
-
-<div style="width: 100%; height: 1px;background-color: #3688E3; position: relative;  ">
-        
-         
-</div>
-
-
-<div style="width: 100%; height: 1px;background-color: #3688E3; margin-top: 280px; ">
-        
-         
-</div>
-
-
-<div style="width: 100%; height: 1px;background-color: #3688E3;  margin-top: 50px; ">
-        
-         
-</div>
-
-
-<div style="width: 100%; height: 1px;background-color: #3688E3;  margin-top: 50px; ">
-
-        
-      </div>  
-  </div>
-
-<div id="appointments" style="width:75%;float:right;display: none;">
-
-  <div class="container" style="width:50%;height:35px;padding-left:20px;padding-right:20px;background-color: #FFFFFF;">
-    <div class="row">
-    <div class="col-xs-0" style="float:left;">
-    <img src="search.png" style="width:18px;height:20px;margin-top:7px;" >
-    </div>
-    
-    <div class="col-xs-1" style="float:left;">
-    <input type="text" style="margin-top:2px;margin-left:20px;border:none;border-width:0px;width:300px;height:30px;outline:none;" placeholder="search" > </input>
-    </div>
-    
-    <div class="col-xs-2" style="float:right;">
-    <img src="filter.png" style="width:20px;height:12px;margin-top:10px;">
-    </div>
-    
-    </div>
-    </div>
-
-    <!--recycler item-->
-    <div class="parent_division" style="background-color: #FFFFFF;height: 120px;
-    position: relative;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 14px;
-    width: 100%;">
-
-      <img src="img_avatar.png" alt="Avatar" style="width:50px;height: 50px;position: absolute; left: 32px; top: 15px;border-radius: 50%;">
-               <p style="position: absolute; left: 100px;  font-family:'Raleway';font-size: 15px;"> <b>Raj Kothari</b></p>
-      
-               <p style="position: absolute; left: 100px; top: 30px;font-family:'Raleway';font-size: 10px;"> Age:19 | M</p>
-      
-               <p style="position: absolute; left: 35px; top: 60px;font-family:'Raleway'; font-size: 13px;"><b> Address: </b> NIT Patna, ashok rajpath, patna </p>
-      
-               <p style="position: absolute; left: 35px; top: 80px;font-family:'Raleway';font-size: 13px; "> <b>Amount paid:</b> Rs. 200 </p>
-      
-               <p style="position: absolute; right: 33px; top: 30px;font-family:'Raleway';font-size: 13px; "> Date: <b>04-12-2000</b> </p>
-      
-               <p style="position: absolute; right: 33px; top: 50px;font-family:'Raleway';font-size: 13px; "> Time: <b>05:15 am</b> </p>
-            </div>
-</div>
-
-  <div id="newAppointment" style="width:75%;float:right;display: none;">
-    <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)">
-      <table class="container space-between" 
-        style="border:none;border-width:0px;width:90%;height:80%;font-size:18px;margin-top: 30px;"
-      >
-      <tr ><td style="color:#3688E3;size:10px;"><b>Basic Details</b></td></tr>
-        <tr>
-          <td>
-            <img src="profile_pic.png" float="left" width="150px" height="150px" />
-          </td>
-          <td>
-            <table style="float:left;">
-              <tr>
-                <td>
-                  Name
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="name"
-                    class="form-control"
-                    name="name"
-                    ngModel
-                    required
-                    name
-                    style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-                  />
-                  <br />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Age
-                </td>
-                <td>
-                  <input
-                    type="number"
-                    id="age"
-                    class="form-control"
-                    name="age"
-                    ngModel
-                    required
-                    number
-                    style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-                  />
-                  <br />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  Sex
-                </td>
-                <td>
-                  <input
-                    type="text"
-                    id="gender"
-                    class="form-control"
-                    name="gender"
-                    ngModel
-                    required
-                    name
-                    style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-                  />
-                </td>
-              </tr>
-            </table>
-          </td>
-          <td>
-            <p style="margin-left:20px;">Doctor ID</p>
-            <input
-              type="text"
-              id="doctorid"
-              class="form-control"
-              name="doctorid"
-              ngModel
-              required
-              name
-              style="border-radius:5px;border-width:1px;border-style:solid;border-color:#3688E3;padding-left:10px;padding-top:6px;padding-bottom:6px;color:#3688E3;font-size:12px;"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p style="color:#3688E3;size:10px;"><b>Payment Details</b></p>
-            <br />
-            Amount Paid<input
-              type="number"
-              id="amountpaid"
-              class="form-control"
-              name="amountpaid"
-              ngModel
-              required
-              number
-              style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-            />
-            <br />
-            Amount Due<input
-              type="number"
-              id="amountdue"
-              class="form-control"
-              name="amountdue"
-              ngModel
-              required
-              number
-              style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-            />
-          </td>
-          <td>
-            <p style="color:#3688E3;size:10px;"><b>Date and Time</b></p>
-            <br />
-            Date<input
-              type="date"
-              id="date"
-              class="form-control"
-              name="date"
-              ngModel
-              required
-              date
-              style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;width: 70%;"
-            />
-            <br />
-            Time<input
-              type="time"
-              id="time"
-              class="form-control"
-              name="time"
-              ngModel
-              required
-              time
-              style="border-left:none;border-right:none;border-top:none;outline:none;width: 70%;border-bottom-color:#3688E3;"
-            />
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p style="color:#3688E3;size:10px;"><b>Additional Details</b></p>
-            <br />
-            Address<input
-              type="name"
-              id="address"
-              class="form-control"
-              name="address"
-              ngModel
-              required
-              address
-              style="border-left:none;border-right:none;border-top:none;outline:none;border-bottom-color:#3688E3;"
-            />
-          </td>
-          <td>
-            <button
-              type="submit" 
-              style="border-radius:5px;border-width:1px;float:right;border-style:solid;border-color:#3688E3;margin-top:60px;padding-left:10px;padding-top:10px;padding-bottom:10px;color:#FFFFFF;font-size:12px;background:#3688e3;float:center;"
-            >
-              CREATE APPOINTMENT
-            </button>
-          </td>
-        </tr>
-      </table>
-    </form>
-  </div>
-  <div  id= "settings" style="width:75%;float:right;display: none;">
-    <div class="col-xs-3">
-      <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)">
-        <div class="form-group">
-          <label for="name" style="color: #FFFFFF;">Name</label>
-          <input
-            type="name"
-            id="name"
-            class="form-control"
-            name="name"
-            ngModel
-            required
-            name
-          />
-        </div>
-        <div class="form-group">
-          <label for="number" style="color: #FFFFFF;">Phone Number</label>
-          <input
-            type="number"
-            id="number"
-            class="form-control"
-            ngModel
-            name="number"
-            required
-            number
-          />
-        </div>
-        <div class="form-group">
-          <label for="email" style="color: #FFFFFF;">Email</label>
-          <input
-            type="email"
-            id="email"
-            class="form-control"
-            ngModel
-            name="email"
-            required
-            email
-          />
-        </div>
-        <div class="form-group">
-          <label for="password" style="color: #FFFFFF;">Choose Password</label>
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            ngModel
-            name="password"
-            required
-            password
-          />
-        </div>
-        <div class="form-group">
-          <label for="number" style="color: #FFFFFF;">Enter clinic ID</label>
-          <input
-            type="number"
-            id="clinicid"
-            class="form-control"
-            ngModel
-            name="clinicid"
-            required
-            number
-          />
-        </div>
-        <div>
-          <button
-            id="do_signup"
-            type="submit"
-            style="border-radius: 100px;background-color: #FFFFFF; 
-        border: none;
-        color: #3688E3;
-        height: 40px;
-        width: 120px;
-        padding: 10px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;"
-          >
-            Sign up
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-
-
-    </div>
-
-    </body>
->>>>>>> 0fb2f12827022631cb28e81ed085a3c70b6cd7dd
     </html>
