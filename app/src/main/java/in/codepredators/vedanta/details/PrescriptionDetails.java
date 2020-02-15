@@ -14,4 +14,8 @@ public class PrescriptionDetails extends AppCompatActivity {
         setTheme(R.style.LightTheme);
         setContentView(R.layout.prescription_details_actions);
     }
+    
+    // todo add onclick funnction on view records
+
+
 }
