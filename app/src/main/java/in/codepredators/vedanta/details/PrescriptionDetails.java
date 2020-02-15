@@ -7,6 +7,8 @@ import android.os.Bundle;
 import in.codepredators.vedanta.R;
 
 public class PrescriptionDetails extends AppCompatActivity {
+    
+    TextView referText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +18,19 @@ public class PrescriptionDetails extends AppCompatActivity {
     }
     
     // todo add onclick funnction on view records
+    
+    private void assignVariables() {
+        referText = findViewById(R.id.referText);
+    }
+
+    private void setup() {
+        referText.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                 moveRecord();
+            }
+        });
+    }
 
 
 }
