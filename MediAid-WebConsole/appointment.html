@@ -118,7 +118,8 @@
 </li>
    
 </div>
-<!--side Navigation-->
+
+ <!--side Navigation-->
         <div class="left_division" style="background-color: #FFFFFF; 
         height:  100%; width: 25% ; margin-left: 0px;margin-left: -10px; position: absolute;background-image: url(background.png);background-repeat: no-repeat;" >
 
@@ -158,10 +159,6 @@
       </div>  
   </div>
 <!--Appointments-->
-
-
-
-
 
 <div id="appointments" style="width:75%;float:right;display: none;">
 
@@ -212,12 +209,7 @@
             </div>
 </div>
 
-
-
 <!--New Appointment-->
-
-
-
 
   <div id="newAppointment" style="width:75%;float:right;display: none;">
     <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)" id="appoint">
@@ -381,18 +373,14 @@
   </div>
 
 
-
-
-
-
-
-
   <!--Settings division-->
   <div  id= "settings" style="width:75%;float:right;display: none;" class="container space-between">
    
       <div class="col-xs-3" style="position: absolute;margin-top:20px;
       left: 35%; float: left;">
+
       <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)" id="settings">
+
         <div class="form-group">
           <label for="name" >Name</label>
           <input
@@ -431,6 +419,7 @@
         </div>
         <div class="form-group">
           <label for="oldpassword">Old Password</label>
+
           <input
             type="password"
             id="password"
@@ -442,6 +431,33 @@
           />
         </div>
         <div class="form-group">
+          <label for="newpassword">New Password</label>
+
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+
+            name="newpassword"
+
+            required
+            password
+          />
+          <div class="form-group">
+            <label for="re-newpassword">Re-Enter New Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              ngModel
+              name="re-newpassword"
+              required
+              password
+            />
+        </div>
+        <div class="form-group">
+
           <label for="newpassword">New Password</label>
           <input
             type="password"
@@ -465,6 +481,7 @@
             />
         </div>
         <div class="form-group">
+
           <label for="number">Update clinic ID</label>
           <input
             type="number"
@@ -551,4 +568,6 @@
 
 </script>
     </body>
+
     </html>
+
