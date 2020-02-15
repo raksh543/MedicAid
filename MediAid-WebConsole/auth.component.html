@@ -3,9 +3,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script>
+        function openSignIn(){
+            var signin=document.getElementById("signinDiv")
+            signin.style.display="block"
+            var signinButton = document.getElementById("button_login")
+            signinButton.style.display="none"
+            var signupButton = document.getElementById("button_signup")
+            signupButton.style.display="none"
+        }
+        function openSignUp(){
+            var signup=document.getElementById("signupDiv")
+            signup.style.display="block"
+            var signupButton = document.getElementById("button_signup")
+            signupButton.style.display="none"
+            var signinButton = document.getElementById("button_login")
+            signinButton.style.display="none"
+        }
+    </script>
+    <style>
+        #signinDiv {
+            display: none;
+        }
+        #signupDiv {
+            display: none;
+            }
+        .topright{
+            position:absolute;
+            top:0;
+            right:0;
+            margin-top:300px;
+        }
+    </style>
 </head>
 
-<body>
+<body style="background-color: #3688E3;">
     <div
     class="container"
     style="background-color: #3688E3;width: 100%;height: 720px;"
@@ -22,13 +54,15 @@
         What next?
       </p>
     </div>
+
+    <div>
     <div
       class="row"
       style="margin-left: 100px;margin-top: 60px;"
       *ngIf="!isSignUp && !isSignIn"
     >
       <button
-        (click)="openSignIn()"
+        onclick="openSignIn()"
         id="button_login"
         style="margin-top: 40px;border-radius: 100px;background-color: #FFFFFF; 
       border: none;
@@ -47,7 +81,7 @@
       </button>
     </div>
     <div
-      (click)="openSignUp()"
+      onclick="openSignUp()"
       class="row"
       style="margin-left: 100px;margin-top:20px;"
       *ngIf="!isSignIn && !isSignUp"
@@ -70,7 +104,7 @@
         Sign up
       </button>
     </div>
-    <div class="row" *ngIf="isSignIn" style="margin-left: 100px;">
+    <div class="row" id="signinDiv" *ngIf="isSignIn" style="margin-left: 100px">
       <div class="col-xs-3">
         <form #authForm="ngForm" (ngSubmit)="onSubmitSignIn(authForm)">
           <div class="form-group">
@@ -120,7 +154,7 @@
         </form>
       </div>
     </div>
-    <div class="row" *ngIf="isSignUp" style="margin-left: 100px;">
+    <div class="row" id= "signupDiv" *ngIf="isSignUp" style="margin-left: 100px;">
       <div class="col-xs-3">
         <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)">
           <div class="form-group">
@@ -207,6 +241,9 @@
       </div>
     </div>
     </div>
+    <div class="topright">
+        <img src="mainbg.png" width="600px" height="400px" >
+    </div>
+    </div>
 </body>
 </html>
-
