@@ -106,12 +106,12 @@
     </div>
     <div class="row" id="signinDiv" *ngIf="isSignIn" style="margin-left: 100px">
       <div class="col-xs-3">
-        <form #authForm="ngForm" (ngSubmit)="onSubmitSignIn(authForm)">
+        <form #authForm="ngForm" (ngSubmit)="onSubmitSignIn(authForm)" id="signinform">
           <div class="form-group">
             <label for="email" style="color: #FFFFFF;">Email</label>
             <input
               type="email"
-              id="email"
+              id="sign-in-email"
               class="form-control"
               ngModel
               name="email"
@@ -123,7 +123,7 @@
             <label for="password" style="color: #FFFFFF;">password</label>
             <input
               type="password"
-              id="password"
+              id="sign-in-password"
               class="form-control"
               ngModel
               name="password"
@@ -156,7 +156,7 @@
     </div>
     <div class="row" id= "signupDiv" *ngIf="isSignUp" style="margin-left: 100px;">
       <div class="col-xs-3">
-        <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)">
+        <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)" id="signupform">
           <div class="form-group">
             <label for="name" style="color: #FFFFFF;">Name</label>
             <input

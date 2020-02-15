@@ -118,7 +118,8 @@
 </li>
    
 </div>
-<!--side Navigation-->
+
+ <!--side Navigation-->
         <div class="left_division" style="background-color: #FFFFFF; 
         height:  100%; width: 25% ; margin-left: 0px;margin-left: -10px; position: absolute;background-image: url(background.png);background-repeat: no-repeat;" >
 
@@ -158,6 +159,7 @@
       </div>  
   </div>
 <!--Appointments-->
+
 <div id="appointments" style="width:75%;float:right;display: none;">
 
   <div class="container" style="width:50%;height:35px;margin-top:30px;margin-bottom:30px;padding-left:30px;padding-right:20px;background-color: #FFFFFF;position: relative;
@@ -178,6 +180,10 @@
     
     </div>
     </div>
+
+
+
+
 
     <!--recycler item-->
     <div class="parent_division" style="background-color: #FFFFFF;height: 120px;
@@ -202,9 +208,11 @@
                <p style="position: absolute; right: 33px; top: 50px;font-family:'Raleway';font-size: 13px; "> Time: <b>05:15 am</b> </p>
             </div>
 </div>
+
 <!--New Appointment-->
+
   <div id="newAppointment" style="width:75%;float:right;display: none;">
-    <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)">
+    <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)" id="appoint">
       <table class="container space-between" 
         style="border:none;border-width:0px;width:90%;height:80%;font-size:18px;margin-top: 30px;"
       >
@@ -274,9 +282,9 @@
             <p style="margin-left:20px;">Doctor ID</p>
             <input
               type="text"
-              id="doctorid"
+              id="docName"
               class="form-control"
-              name="doctorid"
+              name="docName"
               ngModel
               required
               name
@@ -290,7 +298,7 @@
             <br />
             Amount Paid<input
               type="number"
-              id="amountpaid"
+              id="amtPaid"
               class="form-control"
               name="amountpaid"
               ngModel
@@ -364,12 +372,15 @@
     </form>
   </div>
 
+
   <!--Settings division-->
   <div  id= "settings" style="width:75%;float:right;display: none;" class="container space-between">
    
       <div class="col-xs-3" style="position: absolute;margin-top:20px;
       left: 35%; float: left;">
-      <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)">
+
+      <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)" id="settings">
+
         <div class="form-group">
           <label for="name" >Name</label>
           <input
@@ -408,6 +419,7 @@
         </div>
         <div class="form-group">
           <label for="oldpassword">Old Password</label>
+
           <input
             type="password"
             id="password"
@@ -419,6 +431,33 @@
           />
         </div>
         <div class="form-group">
+          <label for="newpassword">New Password</label>
+
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+
+            name="newpassword"
+
+            required
+            password
+          />
+          <div class="form-group">
+            <label for="re-newpassword">Re-Enter New Password</label>
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              ngModel
+              name="re-newpassword"
+              required
+              password
+            />
+        </div>
+        <div class="form-group">
+
           <label for="newpassword">New Password</label>
           <input
             type="password"
@@ -442,6 +481,7 @@
             />
         </div>
         <div class="form-group">
+
           <label for="number">Update clinic ID</label>
           <input
             type="number"
@@ -496,5 +536,38 @@
 
     </div>
 
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBlyx_6Hb2dY_KMc5WbArjgDQcUtgPUiEs",
+    authDomain: "vedanta-6c527.firebaseapp.com",
+    databaseURL: "https://vedanta-6c527.firebaseio.com",
+    projectId: "vedanta-6c527",
+    storageBucket: "vedanta-6c527.appspot.com",
+    messagingSenderId: "328727345990",
+    appId: "1:328727345990:web:8d3f243bc656bda03b4347",
+    measurementId: "G-KSEY976X91"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth()
+  const details = firebase.database()
+  const firestore = firebase.firestore()
+
+</script>
     </body>
+
     </html>
+
