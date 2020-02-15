@@ -1,5 +1,5 @@
 //SIGN IN
-var uid=""
+var uid=null
 const signinform = document.querySelector('#signinform')
 signinform.addEventListener('submit', (e) =>
 {
@@ -30,6 +30,7 @@ signupform.addEventListener('submit', (e)=>{
         userName:displayName,
         clinicID:clinicid,
         phoneNumber:phoneNumber,
+        uid = uid, 
         doctorList:{
             doctorID:null,
             appointments:{
@@ -71,31 +72,37 @@ dbnameref.on('value', function(datasnapshot){
     })
 })
 
-// //SET APPOINTMENT 
-// const appointment = document.querySelector('#appoint')
-// appointment.addEventListener('sumbit', (e)=> {
-//     e.preventDefault();
-//     console.log("Here4")
-//     const patientName = appointment['name'].value;
-//     const age = appointment['age'].value;
-//     const amountPaid = appointment['amtPaid'].value;
-//     const date = appointment['date'].value;
-//     const address = appointment['address'].value;
-//     const doctorID = appointment['docID'].value;
+//SET APPOINTMENT 
+const appointment = document.querySelector('#appoint')
+appointment.addEventListener('sumbit', (e)=> {
+    e.preventDefault();
+    console.log("Here4")
+    
+    
+    const patientName = appointment['name'].value;
+    const age = appointment['age'].value;
+    const amountPaid = appointment['amtPaid'].value;
+    const date = appointment['date'].value;
+    const address = appointment['address'].value;
+    const doctorID = appointment['docID'].value;
 
 
-// })
 
 
 
+})
 
+
+
+//LOGOUT
+// const
 
 // const name = signupform['name'].value;
 // const clinicID = signupform['clinicid'].value;
 
-console.log(email)
+// console.log(email)
 
 
 
 
-console.log('Here')
+// console.log('Here')
