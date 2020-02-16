@@ -110,16 +110,15 @@
         <ul style="display: flex; float: right;margin-top: -2px;">
 
             <li style="list-style-type: none;position: relative;  font-family:'Raleway';font-size: 20px; color: #FFFFFF; margin-right: 20px;">
-     <b>Current Admin - Parth Sharma</b></p></li>
+     <b>Current Admin - Rakshita Jain</b></p></li>
 
      <li style="list-style-type: none;">
    
-    <button type="submit" style="margin-top: -40px;margin-right: 30px;color: #3688E3; height: 35px;width: 100px;">LOGOUT</button>
+    <button id = "logout" type="submit" style="margin-top: -40px;margin-right: 30px;color: #3688E3; height: 35px;width: 100px;">LOGOUT</button>
 </li>
    
 </div>
-
- <!--side Navigation-->
+<!--side Navigation-->
         <div class="left_division" style="background-color: #FFFFFF; 
         height:  100%; width: 25% ; margin-left: 0px;margin-left: -10px; position: absolute;background-image: url(background.png);background-repeat: no-repeat;" >
 
@@ -159,6 +158,10 @@
       </div>  
   </div>
 <!--Appointments-->
+
+
+
+
 
 <div id="appointments" style="width:75%;float:right;display: none;">
 
@@ -209,7 +212,14 @@
             </div>
 </div>
 
+
+
+
+
 <!--New Appointment-->
+
+
+
 
   <div id="newAppointment" style="width:75%;float:right;display: none;">
     <form #detailForm="ngForm" (ngSubmit)="onSubmitAppointment(detailForm)" id="appoint">
@@ -373,14 +383,18 @@
   </div>
 
 
+
+
+
+
+
+
   <!--Settings division-->
   <div  id= "settings" style="width:75%;float:right;display: none;" class="container space-between">
    
       <div class="col-xs-3" style="position: absolute;margin-top:20px;
       left: 35%; float: left;">
-
       <form #authForm="ngForm" (ngSubmit)="onSubmitSignUp(authForm)" id="settings">
-
         <div class="form-group">
           <label for="name" >Name</label>
           <input
@@ -419,7 +433,6 @@
         </div>
         <div class="form-group">
           <label for="oldpassword">Old Password</label>
-
           <input
             type="password"
             id="password"
@@ -432,33 +445,6 @@
         </div>
         <div class="form-group">
           <label for="newpassword">New Password</label>
-
-          <input
-            type="password"
-            id="password"
-            class="form-control"
-            ngModel
-
-            name="newpassword"
-
-            required
-            password
-          />
-          <div class="form-group">
-            <label for="re-newpassword">Re-Enter New Password</label>
-            <input
-              type="password"
-              id="password"
-              class="form-control"
-              ngModel
-              name="re-newpassword"
-              required
-              password
-            />
-        </div>
-        <div class="form-group">
-
-          <label for="newpassword">New Password</label>
           <input
             type="password"
             id="password"
@@ -481,7 +467,6 @@
             />
         </div>
         <div class="form-group">
-
           <label for="number">Update clinic ID</label>
           <input
             type="number"
@@ -566,8 +551,56 @@
   const details = firebase.database()
   const firestore = firebase.firestore()
 
+
 </script>
+
+
+
+
+<!-- 
+The core Firebase JS SDK is always required and must be listed first
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.2/firebase-database.js"></script> -->
+
+<!-- <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCesmeN3Cfvm5sAgFnfW_eDs3zUL-KrIqk",
+    authDomain: "medicaid-47b36.firebaseapp.com",
+    databaseURL: "https://medicaid-47b36.firebaseio.com",
+    projectId: "medicaid-47b36",
+    storageBucket: "medicaid-47b36.appspot.com",
+    messagingSenderId: "72877647610",
+    appId: "1:72877647610:web:c46477d57cc64ddbc20b43",
+    measurementId: "G-234S7B884T"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+  var details = firebase.database();
+  
+</script>
+
+</script> -->
+
+<script src="./index2.js"></script> 
+
+
+
+
+
+
+
+
+
+
     </body>
-
     </html>
-

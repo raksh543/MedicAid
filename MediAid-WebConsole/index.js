@@ -10,9 +10,9 @@ signinform.addEventListener('submit', (e) =>
     const password = signinform['sign-in-password'].value;
 
 
-    signinform.signInWithEmailAndPassword(eamil,password).then(cred =>{
-        uniqueID = cred.user.uid
-        window.location.href = "newappointment.component.html"
+    auth.signInWithEmailAndPassword(email,password).then(cred =>{
+        console.log("Logged in")
+        window.location.href = "\appointment.html"
     })
      
 })
@@ -50,14 +50,14 @@ signupform.addEventListener('submit', (e)=>{
         }
 
     }
-
+console.log("Creatinggg.....")
     auth.createUserWithEmailAndPassword(email, password).then(cred =>{
         console.log(cred)
                 details.ref('users').push({user});
                 console.log("Added")
-                uid=cred.user.uid();
+                // uid=cred.user.uid();
                 signupform.reset()
-                window.location.href = "newappointment.component.html"
+                window.location.href = "\appointment.html"
                
             
         })
@@ -66,86 +66,6 @@ signupform.addEventListener('submit', (e)=>{
 
 
 
-
-
-//to retrieve data
-var dbnameref = details.ref('users');
-dbnameref.on('value', function(datasnapshot){
-    datasnapshot.forEach(function(childsnap){
-        var childData = childsnap.val();
-        console.log(childData.user.clinicID)
-    })
-})
-
-
-
-
-
-
-//SET APPOINTMENT 
-const appointment = document.querySelector('#appoint')
-appointment.addEventListener('sumbit', (e)=> {
-    e.preventDefault();
-    console.log("Here4")
-    
-    const patientName = appointment['name'].value
-    const age = appointment['age'].value
-    const email= appointment['email'].value
-    const amountPaid = appointment['amtPaid'].value
-    const date = dateObj.toString(appointment['date'].value)
-    const time = appointment['time'].value
-    const address = appointment['address'].value
-    const amtDue = appointment['amtDue'].value;
-    const sex = appointment['gender'].value;
-    const doctorName = appointment['docName'].value
-    
-    const appt = {
-        patientName:patientName,
-        age:age,
-        email:email,
-        amountPaid:amountPaid,
-        date:date,
-        address:address,
-        sex:sex,
-        amtPaid:amtPaid,
-        time:time
-
-    
-    }
-
-    details.ref(users.uid === uid).push(appt)
-    appointment.reset();
-
-
-
-})
-
-
-
-//LOGOUT
-const logout = document.querySelector('#logout')
-logout.addEventListener('click', (e) =>
-{
-    auth.signOut();
-    uid = null
-})
-
-
-
-
-// //SETTINGS
-// const setting = document.querySelector('#settings')
-// setting.addEventListener('click', (e)=>
-// {
-    
-//     if()
-//     details().ref()
-// })
-
-// const name = signupform['name'].value;
-// const clinicID = signupform['clinicid'].value;
-
-// console.log(email)
 
 
 
